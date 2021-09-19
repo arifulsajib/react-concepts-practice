@@ -55,3 +55,10 @@
   padding: 7px 15px;
   border-radius: 7px;
 }
+
+.user {
+  background-color: rgb(13, 83, 104);
+  margin: 20px;
+  border: 3px solid;
+  border-radius: 10px;
+}
