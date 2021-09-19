@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   ]
   return (
     <div className="App">
+      <Counter></Counter>
       {
         products.map(product => <Products name={product.name} price={product.price}></Products>)
       }
@@ -16,6 +18,7 @@ function App() {
   );
 }
 
+// Product component
 function Products(props){
   // Styles using variable
   const productStyle = {
@@ -27,6 +30,24 @@ function Products(props){
     <div className="product" style={productStyle}>
       <h1>{props.name}</h1>
       <h3>{props.price}</h3>
+    </div>
+  );
+}
+
+// Counter component
+function Counter() {
+  const [count, setCount] = useState(1);
+  const handleIncrease = () => {
+    setCount(count + 1);
+  }
+  const handleDecrease = () => {
+    setCount(count - 1);
+  }
+  return (
+    <div className="counter">
+      <h1>Count: {count}</h1>
+      <button onClick={handleIncrease}>Increase</button>
+      <button onClick={handleDecrease}>Decrease</button>
     </div>
   );
 }
